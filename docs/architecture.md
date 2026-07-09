@@ -11,12 +11,12 @@ evidence is strong enough to act on.
 ```mermaid
 flowchart TB
   subgraph SRC["Meeting platform (Zoom / Meet / Teams)"]
-    EV["Event stream:\njoin, leave, rename,\nwebcam, screen share,\nspeaking, transcript"]
-    META["Calendar invite:\ncandidate name + email,\ninterviewer names + emails"]
+    EV["Event stream:<br/>join, leave, rename,<br/>webcam, screen share,<br/>speaking, transcript"]
+    META["Calendar invite:<br/>candidate name + email,<br/>interviewer names + emails"]
   end
 
   EV --> ING["Event ingestion"]
-  ING --> STATE["Per-participant state\nnames, utterances, talk time,\nwebcam, join time"]
+  ING --> STATE["Per-participant state<br/>names, utterances, talk time,<br/>webcam, join time"]
   META --> CTX["Meeting context (prior)"]
 
   STATE --> SIG
@@ -25,19 +25,19 @@ flowchart TB
   subgraph SIG["Weak signals (independent, may abstain)"]
     S1["Identity match"]
     S2["Roster exclusion"]
-    S3["Conversation role\n(rules or Claude)"]
+    S3["Conversation role<br/>(rules or Claude)"]
     S4["Speaking dynamics"]
     S5["Presence and behavior"]
   end
 
-  SIG --> FUSE["Fusion\nweighted log-odds, softmax,\nexplicit unknown hypothesis"]
-  FUSE --> DEC["Decision policy\ninsufficient / ambiguous /\nleaning / confident"]
-  FUSE --> EXP["Explanation\n(waterfall + plain text)"]
+  SIG --> FUSE["Fusion<br/>weighted log-odds, softmax,<br/>explicit unknown hypothesis"]
+  FUSE --> DEC["Decision policy<br/>insufficient / ambiguous /<br/>leaning / confident"]
+  FUSE --> EXP["Explanation<br/>(waterfall + plain text)"]
   DEC --> OUT["Belief snapshot per event"]
   EXP --> OUT
   OUT --> UI["Real-time dashboard"]
 
-  LAB[("Labeled past\ninterviews")] -. "calibrate weights (offline)" .-> FUSE
+  LAB[("Labeled past<br/>interviews")] -. "calibrate weights (offline)" .-> FUSE
 ```
 
 ## Why this shape
