@@ -17,9 +17,9 @@ function EvidenceRow({
   const width = Math.min(100, (Math.abs(contribution) / BAR_SCALE) * 100);
   return (
     <div className="grid grid-cols-[86px_1fr_52px] items-center gap-2 py-1">
-      <span className="truncate text-[11px] text-slate-400">{label}</span>
+      <span className="truncate text-[11px] text-slate-500">{label}</span>
       <div className="relative h-4">
-        <div className="absolute left-1/2 top-0 h-full w-px bg-slate-700" />
+        <div className="absolute left-1/2 top-0 h-full w-px bg-slate-300" />
         <div
           className={`bar-fill absolute top-0.5 h-3 rounded-sm ${barColor(contribution)}`}
           style={{
@@ -57,28 +57,28 @@ export function ParticipantCard({
     <div
       className={`rounded-lg border p-3.5 transition-colors ${
         isLeader
-          ? "border-emerald-500/40 bg-emerald-500/[0.06]"
-          : "border-ink-600 bg-ink-800/60"
+          ? "border-emerald-300 bg-emerald-50"
+          : "border-slate-200 bg-white"
       }`}
     >
       <div className="flex items-center justify-between gap-3">
         <div className="flex min-w-0 items-center gap-2">
           <span
             className={`h-2 w-2 shrink-0 rounded-full ${
-              isSpeaking ? "bg-emerald-400 speaking-dot" : "bg-slate-600"
+              isSpeaking ? "bg-emerald-500 speaking-dot" : "bg-slate-300"
             }`}
           />
-          <span className="truncate text-sm font-medium text-slate-100">{belief.displayName}</span>
-          <span className="shrink-0 font-mono text-[10px] text-slate-600">#{rank}</span>
+          <span className="truncate text-sm font-medium text-slate-900">{belief.displayName}</span>
+          <span className="shrink-0 font-mono text-[10px] text-slate-400">#{rank}</span>
         </div>
-        <span className="shrink-0 font-mono text-sm font-semibold text-slate-200">
+        <span className="shrink-0 font-mono text-sm font-semibold text-slate-900">
           {pct(belief.probability)}
         </span>
       </div>
 
-      <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-ink-700">
+      <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-100">
         <div
-          className={`bar-fill h-full rounded-full ${isLeader ? "bg-emerald-500" : "bg-slate-500"}`}
+          className={`bar-fill h-full rounded-full ${isLeader ? "bg-emerald-500" : "bg-slate-400"}`}
           style={{ width: `${Math.max(2, belief.probability * 100)}%` }}
         />
       </div>
@@ -87,7 +87,7 @@ export function ParticipantCard({
         <p className="mt-2 line-clamp-2 text-[11px] leading-snug text-slate-500">{topRationale}</p>
       )}
 
-      <div className="mt-2 border-t border-ink-700 pt-1.5">
+      <div className="mt-2 border-t border-slate-100 pt-1.5">
         {evidence.map((e) => (
           <EvidenceRow
             key={e.signalId}

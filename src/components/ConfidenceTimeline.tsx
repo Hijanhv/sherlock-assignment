@@ -31,13 +31,13 @@ export function ConfidenceTimeline({ history }: { history: Belief[] }) {
     <div>
       <div className="mb-2 flex items-center gap-4 text-[11px] text-slate-500">
         <span className="flex items-center gap-1.5">
-          <span className="h-0.5 w-4 bg-emerald-400" /> leader
+          <span className="h-0.5 w-4 bg-emerald-500" /> leader
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="h-0.5 w-4 bg-sky-400" /> runner-up
+          <span className="h-0.5 w-4 bg-sky-500" /> runner-up
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="h-0.5 w-4 bg-slate-500" /> unknown
+          <span className="h-0.5 w-4 bg-slate-400" /> unknown
         </span>
       </div>
       <svg
@@ -54,7 +54,7 @@ export function ConfidenceTimeline({ history }: { history: Belief[] }) {
             x2={W - PAD.r}
             y1={y}
             y2={y}
-            stroke="#1d2430"
+            stroke="#e2e8f0"
             strokeWidth={1}
             vectorEffect="non-scaling-stroke"
           />
@@ -62,7 +62,7 @@ export function ConfidenceTimeline({ history }: { history: Belief[] }) {
         <path
           d={path(unknown)}
           fill="none"
-          stroke="#64748b"
+          stroke="#94a3b8"
           strokeWidth={1.5}
           strokeDasharray="3 3"
           vectorEffect="non-scaling-stroke"
@@ -70,14 +70,14 @@ export function ConfidenceTimeline({ history }: { history: Belief[] }) {
         <path
           d={path(runnerProb)}
           fill="none"
-          stroke="#38bdf8"
+          stroke="#0ea5e9"
           strokeWidth={1.5}
           vectorEffect="non-scaling-stroke"
         />
         <path
           d={path(topProb)}
           fill="none"
-          stroke="#34d399"
+          stroke="#10b981"
           strokeWidth={2}
           vectorEffect="non-scaling-stroke"
         />

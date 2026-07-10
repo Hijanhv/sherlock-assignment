@@ -21,8 +21,8 @@ export function ScenarioPicker({
             onClick={() => onSelect(s.id)}
             className={`rounded-full border px-3 py-1.5 text-xs transition-colors ${
               s.id === activeId
-                ? "border-slate-400 bg-slate-100 text-ink-950"
-                : "border-ink-600 text-slate-400 hover:border-slate-500 hover:text-slate-200"
+                ? "border-slate-900 bg-slate-900 text-white"
+                : "border-slate-300 text-slate-600 hover:border-slate-400 hover:text-slate-900"
             }`}
           >
             {s.challenge}
@@ -30,8 +30,8 @@ export function ScenarioPicker({
         ))}
       </div>
       {active && (
-        <div className="mt-3 rounded-lg border border-ink-600 bg-ink-800/40 p-3">
-          <div className="text-sm font-medium text-slate-200">{active.title}</div>
+        <div className="mt-3 rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
+          <div className="text-sm font-medium text-slate-900">{active.title}</div>
           <p className="mt-1 text-xs leading-relaxed text-slate-500">{active.summary}</p>
         </div>
       )}

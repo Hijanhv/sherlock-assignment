@@ -23,38 +23,38 @@ export const DECISION_META: Record<
 > = {
   confident: {
     label: "Candidate identified",
-    tone: "bg-emerald-500/15 border-emerald-500/40",
-    ring: "bg-emerald-400",
-    text: "text-emerald-300",
+    tone: "bg-emerald-50 border-emerald-200",
+    ring: "bg-emerald-500",
+    text: "text-emerald-700",
   },
   leaning: {
     label: "Leading candidate",
-    tone: "bg-sky-500/15 border-sky-500/40",
-    ring: "bg-sky-400",
-    text: "text-sky-300",
+    tone: "bg-sky-50 border-sky-200",
+    ring: "bg-sky-500",
+    text: "text-sky-700",
   },
   ambiguous: {
     label: "Ambiguous, holding",
-    tone: "bg-amber-500/15 border-amber-500/40",
-    ring: "bg-amber-400",
-    text: "text-amber-300",
+    tone: "bg-amber-50 border-amber-200",
+    ring: "bg-amber-500",
+    text: "text-amber-700",
   },
   insufficient: {
     label: "Gathering evidence",
-    tone: "bg-slate-500/10 border-slate-600/50",
+    tone: "bg-slate-50 border-slate-200",
     ring: "bg-slate-400",
-    text: "text-slate-300",
+    text: "text-slate-600",
   },
 };
 
 export function contributionColor(x: number): string {
-  if (x > 0.05) return "text-emerald-400";
-  if (x < -0.05) return "text-rose-400";
-  return "text-slate-500";
+  if (x > 0.05) return "text-emerald-600";
+  if (x < -0.05) return "text-rose-600";
+  return "text-slate-400";
 }
 
 export function barColor(x: number): string {
   if (x > 0.05) return "bg-emerald-500";
   if (x < -0.05) return "bg-rose-500";
-  return "bg-slate-600";
+  return "bg-slate-300";
 }

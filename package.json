@@ -7,18 +7,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
     "test": "tsx --test tests/*.test.ts",
     "calibrate": "tsx scripts/calibrate.ts",
     "replay": "tsx scripts/replay.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
     "next": "^15.5.20",
     "react": "19.0.0",
     "react-dom": "19.0.0"
   },
   "devDependencies": {
-    "@anthropic-ai/sdk": "^0.39.0",
     "@types/node": "^22.10.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",

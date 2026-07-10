@@ -18,7 +18,7 @@ type RoleModel = "rules" | "claude";
 
 function Panel({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-xl border border-ink-600 bg-ink-800/40 p-4">
+    <section className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
       <h2 className="mb-3 text-xs font-medium uppercase tracking-wider text-slate-500">{title}</h2>
       {children}
     </section>
@@ -89,11 +89,11 @@ export default function Home() {
       <header className="mb-6 flex flex-wrap items-end justify-between gap-3">
         <div>
           <div className="flex items-center gap-2.5">
-            <div className="grid h-8 w-8 place-items-center rounded-md bg-slate-100 font-mono text-sm font-bold text-ink-950">
+            <div className="grid h-8 w-8 place-items-center rounded-md bg-slate-900 font-mono text-sm font-bold text-white">
               S
             </div>
-            <h1 className="text-xl font-semibold tracking-tight text-slate-100">Sherlock</h1>
-            <span className="rounded border border-ink-600 px-1.5 py-0.5 font-mono text-[10px] text-slate-500">
+            <h1 className="text-xl font-semibold tracking-tight text-slate-900">Sherlock</h1>
+            <span className="rounded border border-slate-300 px-1.5 py-0.5 font-mono text-[10px] text-slate-500">
               candidate-id
             </span>
           </div>
@@ -114,7 +114,7 @@ export default function Home() {
           <DecisionBanner belief={belief} />
 
           <Panel title="Why this call">
-            <p className="text-sm leading-relaxed text-slate-300">{belief.explanation}</p>
+            <p className="text-sm leading-relaxed text-slate-700">{belief.explanation}</p>
           </Panel>
 
           <Panel title="Confidence over time">
@@ -150,26 +150,26 @@ export default function Home() {
             <dl className="space-y-1.5 text-sm">
               <div className="flex justify-between gap-4">
                 <dt className="text-slate-500">Meeting</dt>
-                <dd className="text-right text-slate-300">{ctx.title}</dd>
+                <dd className="text-right text-slate-700">{ctx.title}</dd>
               </div>
               <div className="flex justify-between gap-4">
                 <dt className="text-slate-500">Candidate name</dt>
-                <dd className="text-right text-slate-300">{ctx.candidateName ?? "unknown"}</dd>
+                <dd className="text-right text-slate-700">{ctx.candidateName ?? "unknown"}</dd>
               </div>
               <div className="flex justify-between gap-4">
                 <dt className="text-slate-500">Candidate email</dt>
-                <dd className="text-right font-mono text-xs text-slate-400">
+                <dd className="text-right font-mono text-xs text-slate-500">
                   {ctx.candidateEmail ?? "unknown"}
                 </dd>
               </div>
               <div className="flex justify-between gap-4">
                 <dt className="text-slate-500">Interviewers</dt>
-                <dd className="text-right text-slate-300">
+                <dd className="text-right text-slate-700">
                   {ctx.interviewers.map((i) => i.name).join(", ") || "none listed"}
                 </dd>
               </div>
             </dl>
-            <p className="mt-3 border-t border-ink-700 pt-2 text-[11px] leading-snug text-slate-600">
+            <p className="mt-3 border-t border-slate-100 pt-2 text-[11px] leading-snug text-slate-500">
               This metadata is treated as a prior, not ground truth. It can be wrong, and the engine
               is free to disagree with it.
             </p>
@@ -178,7 +178,7 @@ export default function Home() {
           <Panel title={`Participants (${belief.beliefs.length})`}>
             <div className="space-y-2.5">
               {belief.beliefs.length === 0 && (
-                <p className="py-6 text-center text-xs text-slate-600">No one has joined yet.</p>
+                <p className="py-6 text-center text-xs text-slate-400">No one has joined yet.</p>
               )}
               {belief.beliefs.map((b, i) => (
                 <ParticipantCard
@@ -190,7 +190,7 @@ export default function Home() {
                 />
               ))}
             </div>
-            <div className="mt-3 flex justify-between border-t border-ink-700 pt-2 text-[11px] text-slate-600">
+            <div className="mt-3 flex justify-between border-t border-slate-100 pt-2 text-[11px] text-slate-500">
               <span>unknown hypothesis</span>
               <span className="font-mono">{pct(belief.unknownMass)}</span>
             </div>
@@ -198,7 +198,7 @@ export default function Home() {
         </div>
       </div>
 
-      <footer className="mt-8 border-t border-ink-700 pt-4 text-[11px] text-slate-600">
+      <footer className="mt-8 border-t border-slate-200 pt-4 text-[11px] text-slate-500">
         Signals: identity, calendar roster, conversation role, speaking dynamics, presence. Fused in
         log-odds, normalized with an explicit unknown hypothesis so the system can decline to guess.
       </footer>
