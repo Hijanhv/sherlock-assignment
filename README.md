@@ -1,6 +1,6 @@
 # Sherlock: real-time interview candidate identification
 
-**Live demo: https://sherlock-red.vercel.app** &nbsp;|&nbsp; Repo: https://github.com/Hijanhv/sherlock-assignment
+**Live demo: https://sherlock-red.vercel.app** &nbsp;|&nbsp; video: https://youtu.be/ufgw7XfF8HM 
 
 Sherlock's fraud detectors (deepfake, voice cloning, behavioral analysis) have to
 analyze the candidate's audio and video, not the interviewer's or an observer's.
